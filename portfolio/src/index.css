@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+/* Custom CSS Variables - Everything Gunmetal Blue (#223546) */
+:root {
+  /* Colors - Everything white or variations for maximum contrast */
+  --primary: #ffffff; /* Pure white for primary elements */
+  --secondary: #cbd5e1; /* Slate 300 - Slightly softer white */
+  --accent: #38bdf8; /* Sky 400 - Blue only for special accents */
+  
+  /* Background - EVERYTHING Gunmetal Blue (#223546) */
+  --background: #223546; /* Gunmetal Blue - Main background */
+  --foreground: #ffffff; /* Bright White - All text */
+  --card: #223546; /* Same Gunmetal Blue for cards */
+  --border: #2c4158; /* Slightly lighter Gunmetal for borders */
+  --surface: #223546; /* Same Gunmetal Blue for surfaces */
+  
+  /* Text Colors - All white variations */
+  --text-primary: #ffffff; /* Pure white - Primary text */
+  --text-secondary: #cbd5e1; /* Slate 300 - Secondary text */
+  --text-tertiary: #94a3b8; /* Slate 400 - Tertiary text */
+  
+  /* Status Colors - Kept for alerts */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  
+  /* Gunmetal Variations */
+  --gunmetal: #223546;
+  --gunmetal-light: #2c4158;
+  --gunmetal-lighter: #cbd5e1;
+  --gunmetal-dark: #1a2937;
+}
+
+/* Global Styles - Force Gunmetal Blue everywhere */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #223546 !important; /* Force Gunmetal Blue */
+  color: #ffffff !important; /* Force white text */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* FORCE Gunmetal Blue on ALL elements */
+body,
+section,
+div,
+header,
+footer,
+main,
+article,
+aside,
+nav,
+#home, #about, #skills, #projects, #experience, #certifications, #contact,
+.card,
+.bg-white, .bg-gray-50, .bg-gray-100, .bg-gray-200, .bg-gray-300,
+.bg-slate-50, .bg-slate-100, .bg-slate-200, .bg-slate-300,
+.bg-zinc-50, .bg-zinc-100, .bg-zinc-200, .bg-zinc-300,
+.bg-neutral-50, .bg-neutral-100, .bg-neutral-200, .bg-neutral-300,
+.bg-stone-50, .bg-stone-100, .bg-stone-200, .bg-stone-300 {
+  background-color: #223546 !important; /* Gunmetal Blue */
+}
+
+/* FORCE white text on ALL text elements */
+h1, h2, h3, h4, h5, h6,
+p, span, a:not(.btn-primary):not(.btn-secondary),
+li, label, td, th,
+.text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400, .text-gray-300,
+.text-slate-700, .text-slate-600, .text-slate-500, .text-slate-400, .text-slate-300 {
+  color: #ffffff !important; /* Bright white */
+}
+
+/* Navigation Styles */
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.5rem;
+  color: #cbd5e1 !important; /* Light gray for nav links */
+}
+
+.nav-link.active {
+  color: #38bdf8 !important; /* Blue for active nav items */
+  background-color: rgba(56, 189, 248, 0.1) !important;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: #38bdf8; /* Blue underline */
+  border-radius: 1px;
+}
+
+.nav-link:hover {
+  color: #ffffff !important; /* White on hover */
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a2937; /* Darker Gunmetal */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c4158; /* Lighter Gunmetal */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8; /* Blue on hover */
+  border-radius: 5px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(56, 189, 248, 0.3); /* Blue selection */
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+/* Focus Styles */
+*:focus {
+  outline: 2px solid #38bdf8; /* Blue focus */
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Buttons - Keep some color for contrast */
+.btn-primary {
+  background: linear-gradient(135deg, #38bdf8, #818cf8) !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-secondary {
+  background: #2c4158 !important; /* Lighter Gunmetal */
+  color: #ffffff !important;
+  border: 1px solid #38bdf8 !important; /* Blue border */
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-secondary:hover {
+  background: #38bdf8 !important; /* Blue on hover */
+  border-color: #38bdf8 !important;
+}
+
+/* Cards - Same Gunmetal Blue but with subtle border */
+.card {
+  background: #223546 !important;
+  border: 1px solid #2c4158 !important; /* Subtle border */
+  border-radius: 1rem !important;
+  padding: 1.5rem !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2) !important;
+  border-color: #38bdf8 !important; /* Blue border on hover */
+}
+
+/* Form Elements */
+input, textarea, select {
+  background: #2c4158 !important; /* Lighter Gunmetal */
+  border: 1px solid #2c4158 !important;
+  color: #ffffff !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
+  outline: none !important;
+}
+
+/* Links */
+a:not(.btn-primary):not(.btn-secondary):not(.nav-link) {
+  color: #38bdf8 !important; /* Blue links */
+}
+
+a:not(.btn-primary):not(.btn-secondary):not(.nav-link):hover {
+  color: #60a5fa !important; /* Lighter blue on hover */
+}
+
+/* Status colors - Keep colors for visibility */
+.text-success { color: #10b981 !important; }
+.text-warning { color: #f59e0b !important; }
+.text-error { color: #ef4444 !important; }
+
+/* Mobile menu radius */
+@media (max-width: 1023px) {
+  .nav-link {
+    border-radius: 0.5rem;
+    margin: 0.125rem 0;
+  }
+  
+  .nav-link.active::after {
+    display: none;
+  }
+  
+  .nav-link.active {
+    background-color: rgba(56, 189, 248, 0.15) !important;
+  }
+}
+
+/* Add some visual interest with subtle gradients */
+.gradient-overlay {
+  background: linear-gradient(135deg, 
+    rgba(34, 53, 70, 0.9) 0%, 
+    rgba(26, 41, 55, 0.9) 100%);
+}
+
+/* For sections that need depth */
+.section-depth {
+  background: linear-gradient(145deg, 
+    #1a2937 0%, 
+    #223546 50%, 
+    #2c4158 100%);
+}
